@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новорічний вайб</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert('Скопіюйте це посилання: https://calendar.google.com/calendar/u/0/r?pli=1');
+                });
+            });
+
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', () => {
+                    section.style.transform = 'scale(1.02)';
+                    section.style.transition = 'transform 0.3s';
+                });
+                section.addEventListener('mouseleave', () => {
+                    section.style.transform = 'scale(1)';
+                });
+            });
+
+            const footer = document.querySelector('.footer');
+            footer.addEventListener('click', () => {
+                alert('Дякуємо, що відвідали наш сайт! Бажаємо вам чудового свята! 🎉');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <h1>Як створити новорічний вайб?</h1>
+        <nav>
+            <ul class="nav">
+                <li><a href="#decor">Декор</a></li>
+                <li><a href="#music">Музика</a></li>
+                <li><a href="#recipes">Рецепти</a></li>
+                <li><a href="#fun">Розваги</a></li>
+                <li><a href="#calendar">Календар</a></li>
+                <li><a href="#creativity">Творчість</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="decor" class="section">
+            <h2>Декор і стиль</h2>
+            <p>Ідеї для прикрашання вашого дому у святковому стилі. Спробуйте створити власні новорічні прикраси!</p>
+            <ul>
+                <li>Прикрасьте ялинку гірляндами та тематичними іграшками.</li>
+                <li>Використовуйте свічки для створення затишної атмосфери.</li>
+                <li>Зробіть вінок з натуральних гілок і шишок.</li>
+            </ul>
+            <img src="img/olk.jpg" alt="">
+            <button class="btn">Дізнатися більше</button>
+        </section>
+
+        <section id="music" class="section">
+            <h2>Музика та звуки свята</h2>
+            <p>Слухайте новорічні плейлисти або додайте звуки каміна до вашого вечора.</p>
+            <ul>
+                <li>Класичні мелодії: «Jingle Bells», «Silent Night».</li>
+                <li>Сучасні хіти: плейлист із популярними треками.</li>
+                <li>Звуковий фон: шум снігу, потріскування вогню.</li>
+                <img src="img/last.jpg" alt="">
+            </ul>
+            <button class="btn">Відкрити плейлист</button>
+        </section>
+
+        <section id="recipes" class="section">
+            <h2>Рецепти</h2>
+            <p>Готуйте смачні страви, які створюють справжню атмосферу свята.</p>
+            <ul>
+                <li>Імбирні пряники з глазур’ю.</li>
+                <li>Глінтвейн або какао з маршмеллоу.</li>
+                <li>Салат «Олів’є» у святковому оформленні.</li>
+                <img src="img/kuriza.jpg" alt="">
+            </ul>
+            <button class="btn">Переглянути рецепти</button>
+        </section>
+
+        <section id="fun" class="section">
+            <h2>Розваги</h2>
+            <p>Обирайте фільми, ігри або створюйте свої квести для веселих вечорів.</p>
+            <ul>
+                <li>Класичні фільми: «Один вдома», «Ельф».</li>
+                <li>Настільні ігри для компанії.</li>
+                <li>Організація домашнього квесту.</li>
+            </ul>
+            <button class="btn">Ідеї розваг</button>
+        </section>
+
+        <section id="calendar" class="section">
+            <h2>Календар підготовки</h2>
+            <p>Скористайтеся нашим чеклістом, щоб нічого не забути!</p>
+            <ul>
+                <li>15 грудня: Почати підготовку прикрас.</li>
+                <li>20 грудня: Купити подарунки.</li>
+                <li>25 грудня: Спланувати святкове меню.</li>
+                <li>31 грудня: Зустріти Новий рік у хорошому настрої!</li>
+            </ul>
+            <button class="btn">Розпочати підготовку</button>
+        </section>
+
+        <section id="creativity" class="section">
+            <h2>Творчість</h2>
+            <p>Спробуйте створити щось власноруч, щоб зробити свято ще особливішим.</p>
+            <ul>
+                <li>Генератор святкових листівок.</li>
+                <li>Ідеї подарунків своїми руками.</li>
+                <li>Написання листів Діду Морозу для дітей і дорослих.</li>
+            </ul>
+            <button class="btn">Спробувати</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Новорічний вайб. Усі права захищено.</p>
+    </footer>
+</body>
+</html>
